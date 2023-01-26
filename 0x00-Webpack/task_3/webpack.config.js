@@ -36,7 +36,7 @@ module.exports = {
 		port: 8564,
 	},
 	optimization: {
-		splitchunks: {
+		splitChunks
 			chunks: 'all',
 		},
        }, 
