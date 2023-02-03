@@ -4,7 +4,7 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "jest",
-    "dev":  "webpack serve --mode development --config config/webpack.config.js",
+    "dev": "webpack serve --mode development --config config/webpack.config.js",
     "build": "webpack build --config ./config/webpack.config.js",
     "start": "webpack serve  --config ./config/webpack.config.js",
     "test-watch": "jest --watch"
