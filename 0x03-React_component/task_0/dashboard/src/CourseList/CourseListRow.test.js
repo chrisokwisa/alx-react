@@ -1,6 +1,7 @@
 import React from "react";
 import CourseListRow from "./CourseListRow";
 import { shallow } from "enzyme";
+import PropTypes from 'prop-types';
 
 describe("Course List Row component test", () => {
   it("should render without crashing", () => {

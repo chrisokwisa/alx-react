@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 import { getLatestNotification } from "../utils/utils";
 import Notifications from "./Notifications";
 import NotificationItem from "./NotificationItem";
+import PropTypes from 'prop-types';
 
 const listNotifications = [
   { id: 1, type: "default", value: "New course available" },
