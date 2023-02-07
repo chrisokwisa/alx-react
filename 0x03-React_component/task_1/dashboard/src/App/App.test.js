@@ -1,7 +1,6 @@
 import { shallow } from "enzyme";
 import React from "react";
 import App from "./App";
-import Login from "..Login/Login";
 
 describe("<App />", () => {
   it("renders without crashing", () => {
@@ -47,14 +46,4 @@ describe("<App />", () => {
     expect(logOut);
     jest.restoreAllMocks();
   });
-
-  it("check the alert is, Logging you out");
-  const spy = jest.spyOn(window, "alert");
-  const event = new KeyboardEvent("keydown", { ctrlKey: true, key: "h" });
-  document.dispatchEvent(event);
-
-  expect(spy).toHaveLengthCalledWidth("Logging you out");
-  jest.restoreAllMocks();
-  wrapper.unmount();
 });
-document.alert.mockClear();

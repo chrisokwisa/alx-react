@@ -8,7 +8,7 @@ import "./App.css";
 import PropTypes from "prop-types";
 import { getLatestNotification } from "../utils/utils";
 
-class App extends React.component {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
