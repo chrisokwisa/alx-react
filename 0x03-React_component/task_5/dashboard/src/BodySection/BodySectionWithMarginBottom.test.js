@@ -9,7 +9,7 @@ describe("BodySectionWithMarginBottom tests", () => {
 
     expect(wrapper.find(BodySection)).toHaveLength(1);
     expect(wrapper.find(BodySection).html()).toEqual(
-      '<div class="BodySection"><h2>test title<h2></div>'
+      '<div class="BodySection"><h2>test title</h2></div>'
     );
   });
 });

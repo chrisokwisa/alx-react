@@ -67,7 +67,7 @@ describe("Notification tests", () => {
 
     expect(wrapper.find("div.menuItem").exists()).toBe(true);
     expect(wrapper.find("div.menuItem").html()).toEqual(
-      '<div class="menuItem"><p>Your Notifications</p></div>'
+      '<div class="menuItem"><p>Your notifications</p></div>'
     );
   });
 
@@ -138,6 +138,39 @@ describe("Notification tests", () => {
       wrapper.containsMatchingElement(
         <li data-notification-type="default">No new notification for now</li>
       )
+    );
+  });
+
+  it("doesnt re-render when the list passed as prop is the same", () => {
+    const wrapper = shallow(
+      <Notifications
+        displayDrawer={true}
+        listNotifications={listNotifications}
+      />
+    );
+
+    expect(wrapper.instance().shouldComponentUpdate(listNotifications)).toBe(
+      false
+    );
+  });
+
+  it("re-renders if listNotifications if listNotifications is changed", () => {
+    const newListNotifications = [
+      { id: 1, type: "default", value: "New course available" },
+      { id: 2, type: "urgent", value: "New resume available" },
+      { id: 3, type: "default", html: getLatestNotification() },
+      { id: 4, type: "default", value: "Foo" },
+    ];
+
+    const wrapper = shallow(
+      <Notifications
+        displayDrawer={true}
+        listNotifications={listNotifications}
+      />
+    );
+
+    expect(wrapper.instance().shouldComponentUpdate(newListNotifications)).toBe(
+      true
     );
   });
 });
