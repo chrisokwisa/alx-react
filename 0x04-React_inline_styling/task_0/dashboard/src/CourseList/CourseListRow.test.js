@@ -20,7 +20,7 @@ describe("Course List Row component test", () => {
 
     expect(wrapper.find("tr").children()).toHaveLength(1);
     expect(wrapper.find("tr").childAt(0).html()).toEqual(
-      '<th colSpan="2">test</th>'
+      '<th style="background-color:#deb5b545" colSpan="2">test</th>'
     );
   });
 

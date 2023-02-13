@@ -1,6 +1,6 @@
 # React Inline styling
 
-`Front-end`
+``Front-end`
 `JavaScript`
 `ES6`
 `React`
