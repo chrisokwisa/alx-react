@@ -1,11 +1,9 @@
 .Notifications {
-  padding: 2em;
+  padding: 1em;
   border: 2px dashed red;
-}
-
-button[aria-label="Close"] {
-  border: none;
-  background: none;
+  position: absolute;
+  top: 1.8em;
+  right: 0;
 }
 
 .notification-header {

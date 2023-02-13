@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 
-const WithLogging = ({ WrappedComponent }) => {
-  const getDisplayName = (WrappedComponent) =>
-    WrappedComponent.displayName || WrappedComponent.name || "Component";
+const WithLogging = (WrappedComponent) => {
+  const getDisplayName = (WrappedComponent) => WrappedComponent.displayName || WrappedComponent.name || "Component";
 
-  WithLogging.displayName = `WithLogging(${getDisplayName(WrappedComponent)})`;
+  WithLogging.displayName = `WithLogging(${getDisplayName})`;
 
   return class extends Component {
     componentDidMount() {
@@ -12,9 +11,7 @@ const WithLogging = ({ WrappedComponent }) => {
     }
 
     componentWillUnmount() {
-      console.log(
-        `Component ${getDisplayName(WrappedComponent)} is going to unmount`
-      );
+      console.log(`Component ${getDisplayName(WrappedComponent)} is going to unmount`);
     }
 
     render() {
@@ -22,3 +19,5 @@ const WithLogging = ({ WrappedComponent }) => {
     }
   };
 };
+
+export default WithLogging;

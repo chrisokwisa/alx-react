@@ -1,14 +1,9 @@
-form input {
-  margin: 10px;
-}
 .App-body {
-  font-size: 1.4rem;
-  padding: 1.2em;
-  border-bottom: 4px solid red;
+  font-size: 1rem;
+  padding: 2em;
   height: 45%;
 }
 
-.form-inputs .input input {
-  height: 1.4rem;
-  margin-left: 10px;
+form input {
+  margin: 10px;
 }

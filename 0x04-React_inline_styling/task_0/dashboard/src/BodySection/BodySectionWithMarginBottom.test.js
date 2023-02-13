@@ -4,12 +4,10 @@ import BodySectionWithMarginBottom from "./BodySectionWithMarginBottom";
 import BodySection from "./BodySection";
 
 describe("BodySectionWithMarginBottom tests", () => {
-  it("it should apply margin bottom to child component", () => {
+  it("should apply margin bottom to child component", () => {
     const wrapper = shallow(<BodySectionWithMarginBottom title="test title" />);
 
     expect(wrapper.find(BodySection)).toHaveLength(1);
-    expect(wrapper.find(BodySection).html()).toEqual(
-      '<div class="BodySection"><h2>test title</h2></div>'
-    );
+    expect(wrapper.find(BodySection).html()).toEqual('<div class="bodySection"><h2>test title</h2></div>');
   });
 });
