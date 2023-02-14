@@ -10,7 +10,6 @@ import Notifications from "../Notifications/Notifications";
 import CourseList from "../CourseList/CourseList";
 import { shallow, mount } from "enzyme";
 import { StyleSheetTestUtils } from "aphrodite";
-import { workerData } from "worker_threads";
 
 beforeEach(() => {
   StyleSheetTestUtils.suppressStyleInjection();
@@ -96,26 +95,31 @@ describe("When ctrl + h is pressed", () => {
   document.alert.mockClear();
 });
 
-it("should have default state of displayDrawer as false", () => {
+it("Has default state for displayDrawer false", () => {
   const wrapper = shallow(<App />);
   expect(wrapper.state().displayDrawer).toEqual(false);
 });
 
-it("should update the state of displayDrawer to true after calling handleDisplayDrawer", () => {
-  wrapper.instance().handleDisplayDrawer();
+it("displayDrawer changes to true when calling handleDisplayDrawer", () => {
+  const wrapper = shallow(<App />);
   expect(wrapper.state().displayDrawer).toEqual(false);
+
   const instance = wrapper.instance();
 
   instance.handleDisplayDrawer();
+
   expect(wrapper.state().displayDrawer).toEqual(true);
 });
 
-it("should update state of displayDrawer to false after calling handleHideDrawer", () => {
+it("displayDrawer changes to false when calling handleHideDrawer", () => {
   const wrapper = shallow(<App />);
   expect(wrapper.state().displayDrawer).toEqual(false);
 
-  wrapper.instancr().handleDisplayDrawer();
+  wrapper.instance().handleDisplayDrawer();
+
   expect(wrapper.state().displayDrawer).toEqual(true);
+
   wrapper.instance().handleHideDrawer();
+
   expect(wrapper.state().displayDrawer).toEqual(false);
 });

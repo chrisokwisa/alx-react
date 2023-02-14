@@ -40,13 +40,6 @@ class App extends React.Component {
       this.props.logOut();
     }
   }
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyPress);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyPress);
-  }
 
   handleDisplayDrawer() {
     this.setState({ displayDrawer: true });
@@ -56,12 +49,25 @@ class App extends React.Component {
     this.setState({ displayDrawer: false });
   }
 
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyPress);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyPress);
+  }
+
   render() {
     return (
       <React.Fragment>
         <div className={css(styles.App)}>
           <div className="heading-section">
-            <Notifications listNotifications={this.listNotifications} />
+            <Notifications
+              listNotifications={this.listNotifications}
+              displayDrawer={this.state.displayDrawer}
+              handleDisplayDrawer={this.handleDisplayDrawer}
+              handleHideDrawer={this.handleHideDrawer}
+            />
             <Header />
           </div>
           {this.props.isLoggedIn ? (
@@ -75,10 +81,8 @@ class App extends React.Component {
           )}
           <BodySection title="News from the school">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis at tempora odio, necessitatibus repudiandae
-              reiciendis cum nemo sed asperiores ut molestiae eaque aliquam illo
-              ipsa iste vero dolor voluptates.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis at tempora odio, necessitatibus repudiandae reiciendis cum nemo sed asperiores ut molestiae eaque aliquam illo ipsa
+              iste vero dolor voluptates.
             </p>
           </BodySection>
           <Footer />
