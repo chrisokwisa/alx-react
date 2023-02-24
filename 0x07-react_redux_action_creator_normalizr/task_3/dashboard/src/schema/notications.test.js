@@ -42,7 +42,6 @@ describe("notifications", () => {
     ];
 
     const result = normalized.result;
-
     expect(result).toEqual(expect.arrayContaining(data));
   });
 
