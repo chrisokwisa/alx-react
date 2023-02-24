@@ -1,9 +1,9 @@
 import React from "react";
-import Notifications from "./Notifications";
 import { shallow } from "enzyme";
+import Notifications from "./Notifications";
 
-describe("Notifications component tests", () => {
-  it(" Notifications renders without crashing", () => {
+describe("Notification component tests", () => {
+  it("renders Notification component without crashing", () => {
     const notification = shallow(<Notifications />);
 
     expect(notification).toBeDefined();
@@ -21,11 +21,9 @@ describe("Notifications component tests", () => {
     expect(notification.find("li")).toHaveLength(3);
   });
 
-  it("renders the text Here is the list of notifications", () => {
+  it("renders correct text", () => {
     const notification = shallow(<Notifications />);
 
-    expect(notification.find("p").text()).toEqual(
-      "Here is the list of notifications"
-    );
+    expect(notification.find("p").text()).toBe("Here is the list of notifications");
   });
 });
