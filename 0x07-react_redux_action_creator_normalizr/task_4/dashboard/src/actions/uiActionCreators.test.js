@@ -20,7 +20,7 @@ describe("UI acrion creators", () => {
         type: LOGIN,
         user: { email, password },
       };
-      expected(login(email, password)).toEqual(expectedAction);
+      expect(login(email, password)).toEqual(expectedAction);
     });
   });
 
