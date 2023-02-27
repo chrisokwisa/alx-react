@@ -3,7 +3,6 @@ import {
   LOGOUT,
   DISPLAY_NOTIFICATION_DRAWER,
   HIDE_NOTIFICATION_DRAWER,
-  LOGIN_FAILURE,
 } from "./uiActionTypes";
 
 export function login(email, password) {
@@ -32,21 +31,3 @@ export const hideNotificationDrawer = () => ({
 
 export const boundHideNotificationDrawer = () =>
   dispatch(hideNotificationDrawer());
-
-export const loginFailure = () => {
-  return {
-    type: LOGIN_FAILURE,
-  };
-};
-
-export const loginRequest = (email, password) => {
-  return (dispatch) => {
-    dispatch(login(email, password));
-    return fetch("http://localhost:3000/login-success.json").then(
-      res
-        .json()
-        .then((json) => dispatch(loginSuccess()))
-        .catch((error) => dispatch(loginFailure()))
-    );
-  };
-};
