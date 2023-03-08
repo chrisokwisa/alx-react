@@ -14,7 +14,7 @@ describe("uiReducer", () => {
       isUserLoggedIn: false,
       user: {},
     };
-    const state = uiReducer(undefined, {});
+    const state = uiReducer(undefined, {}).toJS();
     expect(state).toEqual(initialState);
   });
 
@@ -24,7 +24,7 @@ describe("uiReducer", () => {
       isUserLoggedIn: false,
       user: {},
     };
-    const state = uiReducer(initialState, { type: "SELECT_COURSE" });
+    const state = uiReducer(initialState, { type: "SELECT_COURSE" }).toJS;
     expect(state).toEqual(initialState);
   });
 
@@ -36,7 +36,7 @@ describe("uiReducer", () => {
     };
     const state = uiReducer(initialState, {
       type: DISPLAY_NOTIFICATION_DRAWER,
-    });
+    }).toJS();
     expect(state.isNotificationDrawerVisible).toBe(true);
   });
 });
