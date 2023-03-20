@@ -25,11 +25,11 @@ const listCourses = [
   { id: 3, name: "React", credit: 40 },
 ];
 
-export const listNotificationsInitialState = [
-  { id: 1, type: "default", value: "New course available" },
-  { id: 2, type: "urgent", value: "New resume available" },
-  { id: 3, type: "urgent", html: { __html: getLatestNotification() } },
-];
+// export const listNotificationsInitialState = [
+//   { id: 1, type: "default", value: "New course available" },
+//   { id: 2, type: "urgent", value: "New resume available" },
+//   { id: 3, type: "urgent", html: { __html: getLatestNotification() } },
+// ];
 
 document.body.style.margin = 0;
 
@@ -51,13 +51,7 @@ export class App extends Component {
     }
   }
 
-  markNotificationAsRead(id) {
-    this.setState({
-      listNotifications: this.state.listNotifications.filter((notification) => {
-        return notification.id !== id;
-      }),
-    });
-  }
+  
 
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyCombination);
